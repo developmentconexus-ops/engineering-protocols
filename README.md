@@ -36,41 +36,98 @@ The fix is one provider-neutral protocol plus replaceable challenger profiles—
 
 Do **not** adopt this protocol into consuming repositories while its status is `PROPOSED`. First complete independent challenger review, Lead confrontation and explicit operator ratification; then change the protocol/profile status to `ACCEPTED`.
 
-## Adoption by a consuming repository
+## Consuming `AGENTS.md` contract
 
-A consuming repository SHOULD reference these canonical files from its own `AGENTS.md`; it SHOULD NOT copy the protocol locally by default.
+A consuming repository's `AGENTS.md` is a **small bootstrap/router**, not a methodology, status ledger, roadmap, architecture authority or copy of organization-wide standards.
 
-Recommended routing:
+Repositories SHOULD converge on this structural contract while preserving their own authority paths and safety rails:
+
+```text
+1. scope / bootstrap role
+2. fresh-session read order
+3. organizational standards consumed + versions
+4. repository authority / program routing
+5. stable repository safety rails
+6. verification / Git rules
+```
+
+The section contents are intentionally repository-specific. Standardization means the same routing semantics, not identical `AGENTS.md` files.
+
+### Normal work
+
+Do not load challenger material into every session.
 
 ```text
 repository AGENTS.md
-→ canonical DevelopmentConexus METHOD
-→ repository-specific authority/read order
-→ when independent challenger review applies:
-   CHALLENGER-REVIEW-PROTOCOL.md
-   → profiles/FABLE.md when Fable is the challenger
+→ canonical Method or declared local availability mirror
+→ repository router/current authority
 → exact task authority/evidence
+→ task
 ```
 
-Repository-specific authority still determines **what is true about that product**. The challenger protocol determines only **how independent challenge is performed**.
+### Independent challenger work
 
-### Local mirror exception
+Only when independent challenger review is required or deliberately invoked:
 
-A local mirror is justified only when the execution environment cannot reliably read the canonical repository at bootstrap. Any mirror must:
+```text
+repository AGENTS.md
+→ canonical Method or declared local availability mirror
+→ repository router/current authority
+→ exact accepted authority/evidence needed to form an independent view
+→ CHALLENGER-REVIEW-PROTOCOL.md
+→ applicable challenger profile (for example profiles/FABLE.md)
+→ candidate/dialogue LAST
+```
 
-- identify the canonical repository/path and protocol version;
+A candidate/dialogue is review input, never an earlier authority source. This ordering exists to reduce anchoring and confirmation bias.
+
+### Consumed versions
+
+Each consuming repository SHOULD declare the organizational versions it has deliberately adopted, for example:
+
+```text
+DevelopmentConexus Engineering Method: 1.0.0
+Challenger Review Protocol: 1.0.0
+Fable Profile: 1.0.0
+```
+
+Do not silently treat moving `main` as an implicit behavior update. A newer organizational version becomes effective for a consuming repository only when that repository deliberately adopts it through its normal governance.
+
+After ratification, stable protocol/profile releases SHOULD be identifiable by Git version/tag so consumers can name the adopted version without packages, submodules or sync infrastructure.
+
+### Mirror policy
+
+A frequently consumed Method mirror MAY remain local when the repository already declares it as an availability copy rather than a fork.
+
+The challenger protocol and provider profiles SHOULD remain canonical cross-repository reads by default because they are conditional inputs. Do not create local copies merely for convenience.
+
+A local protocol/profile mirror is justified only when the execution environment cannot reliably read the canonical repository at bootstrap. Any such mirror must:
+
+- identify the canonical repository/path and consumed version;
 - be explicitly non-independent authority;
 - be replaced from canonical bytes rather than locally reinterpreted;
-- fail visibly when freshness cannot be established if the consuming workflow depends on exact version parity.
+- fail visibly when freshness cannot be established if exact version parity matters.
 
 Do not add sync infrastructure until this exception is a real repeated consumer.
+
+## Adoption by a consuming repository
+
+Once this protocol is ratified, a consuming repository SHOULD make only the smallest `AGENTS.md` integration necessary:
+
+- preserve its existing repository-specific read order, authority owners and safety rails;
+- declare the consumed Method / Challenger Protocol / profile versions;
+- conditionally route challenger work to the central protocol/profile;
+- keep candidate/dialogue input after independent authority reconstruction;
+- remove duplicated local Fable/challenger instructions only when the central canonical documents cover the same semantics exactly.
+
+Repository-specific authority still determines **what is true about that product**. The challenger protocol determines only **how independent challenge is performed**.
 
 ## Default task handoff after adoption
 
 Once adopted, a task-specific handoff should contain only what changes for that review, for example:
 
 ```text
-Review <candidate> under the canonical DevelopmentConexus Challenger Review Protocol using the Fable profile.
+Review <candidate> under DevelopmentConexus Challenger Review Protocol v1.0.0 using Fable Profile v1.0.0.
 Focus: <task-specific risks/questions>.
 Return the canonical challenger output in chat.
 ```
