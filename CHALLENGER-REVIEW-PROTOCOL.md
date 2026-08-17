@@ -1,7 +1,7 @@
 # DevelopmentConexus Independent Challenger Review Protocol
 
 **Version:** 1.0.0  
-**Status:** ACCEPTED  
+**Status:** PROPOSED — PENDING INDEPENDENT REVIEW  
 **Authority:** organizational engineering collaboration standard  
 **Scope:** DevelopmentConexus engineering work using an independent challenger, human or agentic  
 **Reasoning authority:** `developmentconexus-ops/conexus-methodology/METHOD.md`  
