@@ -9,10 +9,10 @@ developmentconexus-ops/conexus-methodology/METHOD.md
 → canonical reasoning/decision method
 
 CHALLENGER-REVIEW-PROTOCOL.md
-→ canonical independent challenger collaboration protocol
+→ proposed independent challenger collaboration protocol; authority after ratification
 
 profiles/FABLE.md
-→ current Fable realization profile
+→ proposed current Fable realization profile; effective after protocol ratification
 
 consuming repository AGENTS.md + canonical project authorities
 → project-specific read order, status, architecture and execution gates
@@ -28,9 +28,13 @@ The fix is one provider-neutral protocol plus replaceable challenger profiles—
 
 ## Files
 
-- [`CHALLENGER-REVIEW-PROTOCOL.md`](CHALLENGER-REVIEW-PROTOCOL.md) — normative protocol v1.0.0.
-- [`profiles/FABLE.md`](profiles/FABLE.md) — Fable profile v1.0.0.
+- [`CHALLENGER-REVIEW-PROTOCOL.md`](CHALLENGER-REVIEW-PROTOCOL.md) — proposed protocol v1.0.0; pending independent review + operator ratification.
+- [`profiles/FABLE.md`](profiles/FABLE.md) — proposed Fable profile v1.0.0; effective only with the ratified parent protocol.
 - [`AGENTS.md`](AGENTS.md) — bootstrap and repository boundary.
+
+## Adoption gate
+
+Do **not** adopt this protocol into consuming repositories while its status is `PROPOSED`. First complete independent challenger review, Lead confrontation and explicit operator ratification; then change the protocol/profile status to `ACCEPTED`.
 
 ## Adoption by a consuming repository
 
