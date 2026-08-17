@@ -1,7 +1,7 @@
 # Fable Challenger Profile
 
 **Version:** 1.0.0  
-**Status:** ACCEPTED  
+**Status:** PROPOSED — PENDING PARENT PROTOCOL RATIFICATION  
 **Role:** current independent challenger realization  
 **Parent protocol:** `../CHALLENGER-REVIEW-PROTOCOL.md`  
 **Reasoning authority:** `developmentconexus-ops/conexus-methodology/METHOD.md`  
